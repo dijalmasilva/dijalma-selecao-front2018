@@ -1,0 +1,74 @@
+<app-header-fixed></app-header-fixed>
+<div class="center-body">
+  <br />
+  <h3>Pessoas</h3>
+  <br />
+  <form>
+    <br />
+    <div class="select-radio">
+      <label>Selecione o tipo da pessoa</label>
+      <br/>
+      <div class="radio">
+        <input id="cpf" type="radio" name="typeDocument" (change)="changeTypeSelected(1)" [checked]="isCpfDoc">
+        <label for="cpf">CPF</label>
+      </div>
+      <div class="radio">
+        <input id="cnpj" type="radio" name="typeDocument" (change)="changeTypeSelected(2)" [checked]="isCnpjDoc">
+        <label for="cnpj">CNPJ</label>
+      </div>
+    </div>
+    <br/><br/>
+    <div class="input" *ngIf="isCpfDoc">
+      <div class="input-info">
+        <label>Buscar pelo Cpf</label>
+      </div>
+      <img src="/assets/icons/search.svg" alt="busca">
+      <input type="text">
+    </div>
+    <div class="input" *ngIf="isCnpjDoc">
+      <div class="input-info">
+        <label>Buscar pelo Cnpj</label>
+      </div>
+      <img src="/assets/icons/search.svg" alt="busca">
+      <input type="text">
+    </div>
+  </form>
+  <br />
+  <div *ngIf="personsFound.length > 0">
+    <h3 class="no-bold">Resultado da busca</h3>
+    <br />
+    <div class="modal">
+        <div class="accordion">
+            <div class="item-accordion" *ngFor="let person of personsFound">
+                <div *ngIf="person.cpf">
+                  <p>
+                     <span>Nome:</span> {{person.nome}}
+                  </p>
+                  <p>
+                     <span>CPF:</span> {{person.cpf}}
+                  </p>
+                  <p>
+                     <span>Data de Nascimento:</span> {{person.dataDeNascimento}}
+                  </p>
+                </div>
+                <div *ngIf="person.cnpj">
+                  <p>
+                    <span>CNPJ:</span> {{person.cnpj}}
+                  </p>
+                  <p>
+                    <span>Nome Fantasia:</span> {{person.nomeFantasia}}
+                  </p>
+                  <p>
+                    <span>Razão Social:</span> {{person.razaoSocial}}
+                  </p>
+                </div>
+                <div class="bt-action">
+                  <button type="button" class="edit">Visualizar</button>
+                  <button type="button">Remover</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<app-footer-fixed></app-footer-fixed>

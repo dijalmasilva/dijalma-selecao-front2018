@@ -1,0 +1,64 @@
+.menu-left {
+  position: fixed;
+  width: 30%;
+  min-width: 280px;
+  height: 100%;
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+  z-index: 10;
+  animation-duration: 0.2s;
+}
+
+.disable {
+  display: none;
+}
+
+.top-menu {
+  position: relative;
+  text-align: center;
+}
+
+.top-menu img {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+.top-menu img:hover{
+  cursor: pointer;
+}
+
+.top-menu h4 {
+  padding: 12px;
+}
+
+.content {
+  padding: 30px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+
+.menu .item-menu, .sub-menu .sub-item {
+  padding: 10px;
+  display: list-item;
+}
+
+.sub-item {
+  padding-left: 30px !important;
+}
+
+.sub-menu {
+  animation-duration: 0.3s;
+}
+
+.item-menu:hover, .sub-item:hover{
+  font-weight: bold;
+  cursor: pointer;
+}

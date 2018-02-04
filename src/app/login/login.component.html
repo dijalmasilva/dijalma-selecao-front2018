@@ -1,0 +1,36 @@
+<link type="text/css" rel="stylesheet" href="/assets/css/animate.css"/>
+<div class="background-fixed"></div>
+<div class="modal-page">
+  <div class="modal-login animated jackInTheBox">
+    <h3>Login</h3>
+    <br/><br/>
+    <form>
+      <div class="input">
+        <div class="input-info">
+          <label>Usuário</label>
+        </div>
+        <img src="/assets/icons/avatar.svg" alt="usuario" align="left">
+        <input type="text" autofocus="on" [value]="user.name" (input)="user.name=$event.target.value">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Senha</label>
+        </div>
+        <img src="/assets/icons/lock.svg" alt="senha" align="left">
+        <input type="password" [value]="user.password" (input)="user.password=$event.target.value">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Cidade</label>
+        </div>
+        <img src="/assets/icons/city.svg" alt="cidade" align="left">
+        <select>
+          <option *ngFor="let city of cities">{{city}}</option>
+        </select>
+      </div>
+      <div class="bt-function">
+          <button type="button" class="confirm" (click)="login()">LOGAR</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,125 @@
+.center-body {
+  text-align: center;
+}
+
+form, .modal {
+  width: 60%;
+  min-width: 290px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: left;
+  background: #fff;
+  box-shadow: 0 0 20px -10px #000;
+  margin-bottom: 20px;
+}
+
+.select-radio {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.select-radio .radio {
+  display: inline-block;
+  margin: 10px;
+}
+
+.radio label:hover, .radio input:hover, .radio:hover {
+  cursor: pointer;
+}
+
+form .input {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  min-width: 260px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+form .input .input-info {
+  position: absolute;
+  top: -20px;
+  left: 5px;
+}
+
+form .input input, form .input select {
+  padding: 12px;
+  width: 90%;
+  border: none;
+  text-indent: 30px;
+  font-size: 100%;
+  background: none;
+  border-bottom: 1px solid #accbee;
+}
+
+form .input input:focus {
+  outline: none;
+  box-shadow: 0 10px 30px -20px #000;
+}
+
+form .input .input-info:focus {
+  color: white;
+  transition-duration: 1s;
+}
+
+form .input img {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  width: 22px;
+  height: 22px;
+}
+
+.accordion {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.item-accordion {
+  padding: 10px;
+  margin: 10px 0;
+  border-bottom: 1px solid #accbee;
+  border-left: 1px solid #accbee;
+  border-bottom-left-radius: 30%;
+  border-bottom-right-radius: 5%;
+  /*background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);*/
+}
+
+.item-accordion:hover {
+   box-shadow: 0 10px 24px -20px #000;
+}
+
+.item-accordion span {
+  color: #000;
+}
+
+.item-accordion p {
+  margin: 10px 0;
+}
+
+.item-accordion .bt-action {
+  text-align: right;
+  margin: 5px;
+}
+
+.bt-action button {
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+}
+
+.bt-action button:hover {
+  box-shadow: 0 0 10px -4px #000;
+  cursor: pointer;
+  color: white;
+  transition-duration: 0.2s;
+}
+
+.no-bold {
+  font-weight: lighter;
+}
+
+.edit {
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);  
+}

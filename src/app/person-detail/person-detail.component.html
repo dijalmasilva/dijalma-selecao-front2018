@@ -1,0 +1,141 @@
+<app-header-fixed></app-header-fixed>
+<div class="center-body">
+  <br />
+  <h3>Detalhes da pessoa</h3>
+  <br />
+  <form>
+    <br />
+    <div *ngIf="person.cpf">
+      <div align="center">
+        <h4>Pessoa Física</h4>
+      </div>
+      <br/>
+      <div class="input">
+        <div class="input-info">
+          <label>Nome</label>
+        </div>
+        <img src="/assets/icons/name-person.svg" alt="nome">
+        <input type="text" [value]="person.nome">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Data de Nascimento</label>
+        </div>
+        <img src="/assets/icons/birthday-date.svg" alt="data de nascimento">
+        <input type="text" [value]="person.dataDeNascimento">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>CPF</label>
+        </div>
+        <img src="/assets/icons/cpf.svg" alt="cpf">
+        <input type="text" [value]="person.cpf">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>RG</label>
+        </div>
+        <img src="/assets/icons/rg.svg" alt="rg">
+        <input type="text" [value]="person.rg">
+      </div>
+    </div>
+    <div *ngIf="person.cnpj">
+      <div align="center">
+        <h4>Pessoa Júridica</h4>
+      </div>
+      <br/>
+      <div class="input">
+        <div class="input-info">
+          <label>CNPJ</label>
+        </div>
+        <img src="/assets/icons/cnpj.svg" alt="cnpj">
+        <input type="text" [value]="person.cnpj">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Razão Social</label>
+        </div>
+        <img src="/assets/icons/social-reason.svg" alt="razão social">
+        <input type="text" [value]="person.razaoSocial">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Nome Fantasia</label>
+        </div>
+        <img src="/assets/icons/fantasy-name.svg" alt="nome fantasia">
+        <input type="text" [value]="person.nomeFantasia">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Inscrição Estadual</label>
+        </div>
+        <img src="/assets/icons/estadual-inscription.svg" alt="inscrição estadual">
+        <input type="text" [value]="person.inscEstadual">
+      </div>
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>CEP</label>
+      </div>
+      <img src="/assets/icons/cep.svg" alt="cep">
+      <input type="text" [value]="person.cep">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Logradouro</label>
+      </div>
+      <img src="/assets/icons/street.svg" alt="logradouro">
+      <input type="text" [value]="person.logradouro">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Número</label>
+      </div>
+      <img src="/assets/icons/number-home.svg" alt="número">
+      <input type="text" [value]="person.numero">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Bairro</label>
+      </div>
+      <img src="/assets/icons/district.svg" alt="bairro">
+      <input type="text" [value]="person.bairro">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Estado</label>
+      </div>
+      <img src="/assets/icons/state.svg" alt="estado">
+      <select>
+        <option>{{person.estado}}</option>
+      </select>
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Cidade</label>
+      </div>
+      <img src="/assets/icons/city.svg" alt="cidade">
+      <input type="text" [value]="person.cidade">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Telefone</label>
+      </div>
+      <img src="/assets/icons/telephone.svg" alt="telefone">
+      <input type="text" [value]="person.telefone">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>E-mail</label>
+      </div>
+      <img src="/assets/icons/email.svg" alt="e-mail">
+      <input type="email" [value]="person.email">
+    </div>
+    <br/>
+    <div class="bt-function">
+      <button type="button" class="confirm">Editar</button>
+      <button type="button" class="cancel" (click)="goBack()">Voltar</button>
+    </div>
+  </form>
+</div>
+<app-footer-fixed></app-footer-fixed>

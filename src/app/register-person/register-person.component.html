@@ -1,0 +1,148 @@
+<app-header-fixed></app-header-fixed>
+<div class="center-body">
+  <br />
+  <h3>Cadastrar pessoas</h3>
+  <br />
+  <form>
+    <br />
+    <div class="select-radio">
+      <label>Selecione o tipo da pessoa</label>
+      <br/>
+      <div class="radio">
+        <input id="physicalPerson" type="radio" name="typePerson" (change)="changeTypeSelected(1)" [checked]="isPhysicalPerson">
+        <label for="physicalPerson">Física</label>
+      </div>
+      <div class="radio">
+        <input id="legalPerson" type="radio" name="typePerson" (change)="changeTypeSelected(2)" [checked]="isLegalPerson">
+        <label for="legalPerson">Júridica</label>
+      </div>
+    </div>
+    <br/><br/>
+    <div *ngIf="isPhysicalPerson">
+      <div class="input">
+        <div class="input-info">
+          <label>Nome</label>
+        </div>
+        <img src="/assets/icons/name-person.svg" alt="nome">
+        <input type="text">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Data de Nascimento</label>
+        </div>
+        <img src="/assets/icons/birthday-date.svg" alt="data de nascimento">
+        <input type="text">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>CPF</label>
+        </div>
+        <img src="/assets/icons/cpf.svg" alt="cpf">
+        <input type="text">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>RG</label>
+        </div>
+        <img src="/assets/icons/rg.svg" alt="rg">
+        <input type="text">
+      </div>
+    </div>
+    <div *ngIf="isLegalPerson">
+      <div class="input">
+        <div class="input-info">
+          <label>CNPJ</label>
+        </div>
+        <img src="/assets/icons/cnpj.svg" alt="cnpj">
+        <input type="text">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Razão Social</label>
+        </div>
+        <img src="/assets/icons/social-reason.svg" alt="razão social">
+        <input type="text">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Nome Fantasia</label>
+        </div>
+        <img src="/assets/icons/fantasy-name.svg" alt="nome fantasia">
+        <input type="text">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Inscrição Estadual</label>
+        </div>
+        <img src="/assets/icons/estadual-inscription.svg" alt="inscrição estadual">
+        <input type="text">
+      </div>
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>CEP</label>
+      </div>
+      <img src="/assets/icons/cep.svg" alt="cep">
+      <input type="text">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Logradouro</label>
+      </div>
+      <img src="/assets/icons/street.svg" alt="logradouro">
+      <input type="text">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Número</label>
+      </div>
+      <img src="/assets/icons/number-home.svg" alt="número">
+      <input type="text">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Bairro</label>
+      </div>
+      <img src="/assets/icons/district.svg" alt="bairro">
+      <input type="text">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Estado</label>
+      </div>
+      <img src="/assets/icons/state.svg" alt="estado">
+      <select (change)="changeState()" [(ngModel)]="stateSelected" name="stateSelected">
+        <option #cidade *ngFor="let state of states">{{state.nome}}</option>
+      </select>
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Cidade</label>
+      </div>
+      <img src="/assets/icons/city.svg" alt="cidade">
+      <select>
+        <option *ngFor="let city of cities">{{city}}</option>
+      </select>
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>Telefone</label>
+      </div>
+      <img src="/assets/icons/telephone.svg" alt="telefone">
+      <input type="text">
+    </div>
+    <div class="input">
+      <div class="input-info">
+        <label>E-mail</label>
+      </div>
+      <img src="/assets/icons/email.svg" alt="e-mail">
+      <input type="email">
+    </div>
+    <br/>
+    <div class="bt-function">
+        <button type="button" class="confirm">Salvar</button>
+        <button type="button" class="cancel">Voltar</button>
+    </div>
+  </form>
+</div>
+<app-footer-fixed></app-footer-fixed>

@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/animate.css" />
+<aside class="menu-left animated" [class.fadeInLeft]="isMenuVisible" [class.fadeOutLeft]="!isMenuVisible">
+  <div class="top-menu">
+    <img src="/assets/icons/menu.svg" alt="menu" class="icon"
+      (click)="setInvisible()">
+    <h4>Menu</h4>
+  </div>
+  <div class="content">
+      <nav class="menu">
+        <a class="item-menu" routerLink="/dashboard">Dashboard</a>
+        <a class="item-menu" (click)="interationMenu('register')">Cadastrar</a>
+        <nav class="sub-menu animated" [class.slideInLeft]="isRegisterMenu" [class.disable]="!isRegisterMenu">
+            <a class="sub-item" routerLink="/new/person">Pessoa</a>
+        </nav>
+        <a class="item-menu" (click)="interationMenu('list')">Listar</a>
+        <nav class="sub-menu animated" [class.slideInLeft]="isListMenu" [class.disable]="!isListMenu">
+            <a class="sub-item" routerLink="/persons">Pessoa</a>
+        </nav>
+      </nav>
+  </div>
+</aside>

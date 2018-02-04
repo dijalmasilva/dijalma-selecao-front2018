@@ -1,0 +1,116 @@
+.center-body {
+    text-align: center;
+  }
+  
+  form {
+    width: 60%;
+    min-width: 290px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0 0 20px -10px #000;
+    margin-bottom: 20px;
+  }
+  
+  .select-radio {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .select-radio .radio {
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .radio label:hover, .radio input:hover, .radio:hover{
+    cursor: pointer;
+  }
+  
+  form .input {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    min-width: 260px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  form .input .input-info {
+    position: absolute;
+    top: -20px;
+    left: 5px;
+  }
+  
+  form .input input, form .input select {
+    padding: 12px;
+    width: 90%;
+    border: none;
+    text-indent: 30px;
+    font-size: 100%;
+    background: none;
+    border-bottom: 1px solid #accbee;
+  }
+  
+  form .input select {
+    width: 93.3%;
+  }
+  
+  form .input input:focus, form .input select:focus {
+     outline: none;
+     box-shadow: 0 10px 30px -20px #000;
+  }
+  
+  form .input .input-info:focus {
+    color: white;
+    transition-duration: 1s;
+  }
+  
+  form .input img {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    width: 22px;
+    height: 22px;
+  }
+  
+  form .bt-function {
+    padding-bottom: 15px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  form .bt-function button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    margin: 10px;
+  }
+  
+  form .bt-function button:hover {
+    box-shadow: 0 0 10px -4px #000;
+    cursor: pointer;
+  }
+  
+  form .confirm {
+    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  }
+  
+  form .confirm:hover{
+    background-image: linear-gradient(to top, #9eb6a0 0%, #cbd8ca 100%);
+    color: white;
+    transition-duration: 0.2s;
+  }
+  
+  form .confirm:focus {
+    background-image: linear-gradient(to top, #9eb6a0 0%, #cbd8ca 100%);
+    color: white;
+  }
+  
+  form .cancel {
+    background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: lighten;
+  }
+  
