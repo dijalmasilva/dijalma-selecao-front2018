@@ -23,14 +23,14 @@
         <label>Buscar pelo Cpf</label>
       </div>
       <img src="/assets/icons/search.svg" alt="busca">
-      <input type="text">
+      <input type="text" [textMask]="{mask: maskCpf, guide: false}" placeholder="999.999.999-99">
     </div>
     <div class="input" *ngIf="isCnpjDoc">
       <div class="input-info">
         <label>Buscar pelo Cnpj</label>
       </div>
       <img src="/assets/icons/search.svg" alt="busca">
-      <input type="text">
+      <input type="text" [textMask]="{mask: maskCnpj, guide: false}" placeholder="99.999.999/9999-99">
     </div>
   </form>
   <br />
@@ -63,7 +63,7 @@
                   </p>
                 </div>
                 <div class="bt-action">
-                  <button type="button" class="edit">Visualizar</button>
+                  <button type="button" class="edit" (click)="edit(person.id)">Visualizar</button>
                   <button type="button">Remover</button>
                 </div>
             </div>

@@ -24,21 +24,21 @@
           <label>Nome</label>
         </div>
         <img src="/assets/icons/name-person.svg" alt="nome">
-        <input type="text">
+        <input type="text" ([ngModel])="physicalPerson.nome">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Data de Nascimento</label>
         </div>
         <img src="/assets/icons/birthday-date.svg" alt="data de nascimento">
-        <input type="text">
+        <input type="text" [textMask]="{mask: maskDate, guide: false}" placeholder="99/99/9999">
       </div>
       <div class="input">
         <div class="input-info">
           <label>CPF</label>
         </div>
         <img src="/assets/icons/cpf.svg" alt="cpf">
-        <input type="text">
+        <input type="text" [textMask]="{mask: maskCpf, guide:false}" placeholder="999.999.999-99">
       </div>
       <div class="input">
         <div class="input-info">
@@ -54,7 +54,7 @@
           <label>CNPJ</label>
         </div>
         <img src="/assets/icons/cnpj.svg" alt="cnpj">
-        <input type="text">
+        <input type="text" [textMask]="{mask: maskCnpj, guide: false}" placeholder="99.999.999/9999-99">
       </div>
       <div class="input">
         <div class="input-info">
@@ -83,7 +83,7 @@
         <label>CEP</label>
       </div>
       <img src="/assets/icons/cep.svg" alt="cep">
-      <input type="text">
+      <input type="text" [textMask]="{mask: maskCep, guide: false}" placeholder="99999-999">
     </div>
     <div class="input">
       <div class="input-info">
@@ -129,7 +129,7 @@
         <label>Telefone</label>
       </div>
       <img src="/assets/icons/telephone.svg" alt="telefone">
-      <input type="text">
+      <input type="text" [textMask]="{mask: maskFone, guide: false}" placeholder="(99) 99999-9999">
     </div>
     <div class="input">
       <div class="input-info">

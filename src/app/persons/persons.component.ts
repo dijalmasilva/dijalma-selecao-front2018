@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Person } from '../classes/person';
 import { PhysicalPerson } from '../classes/physicalPerson';
@@ -15,7 +16,13 @@ export class PersonsComponent implements OnInit {
   isCnpjDoc: boolean;
   personsFound: Person[];
 
-  constructor() { }
+  public maskCnpj;
+  public maskCpf;
+
+  constructor(private router: Router) {
+    this.maskCpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/];
+    this.maskCnpj = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/];
+  }
 
   ngOnInit() {
     this.choiceCpfDoc();
@@ -23,9 +30,9 @@ export class PersonsComponent implements OnInit {
   }
 
   changeTypeSelected(type: number): void {
-    if (type === 1){
+    if (type === 1) {
       this.choiceCpfDoc();
-    }else {
+    } else {
       this.choiceCnpjDoc();
     }
   }
@@ -71,6 +78,9 @@ export class PersonsComponent implements OnInit {
         'dijalmacz@gmail.com'
       )
     ];
-    console.log(this.personsFound);
+  }
+
+  public edit(id: number): void {
+    this.router.navigate([`/personDetail:${id}`]);
   }
 }
