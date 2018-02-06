@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TextMaskModule } from 'angular2-text-mask';
 
@@ -20,6 +20,7 @@ import { PersonsComponent } from './persons/persons.component';
 import { PersonDetailComponent } from './person-detail/person-detail.component';
 import { StatesService } from './states.service';
 import { InMemoryDataService } from './in-memory-data.service';
+import { PersonService } from './person.service';
 
 
 @NgModule({
@@ -37,15 +38,16 @@ import { InMemoryDataService } from './in-memory-data.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
+      InMemoryDataService, { dataEncapsulation: false }
     ),
-    AppRoutingModule,
     FormsModule,
     TextMaskModule
   ],
-  providers: [MenuService, StatesService],
+  providers: [MenuService, StatesService, PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

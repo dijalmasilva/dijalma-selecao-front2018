@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Person } from '../classes/person';
 import { PhysicalPerson } from '../classes/physicalPerson';
 import { LegalPerson } from '../classes/legalPerson';
+import { PersonService } from '../person.service';
 
 @Component({
   selector: 'app-persons',
@@ -19,7 +20,10 @@ export class PersonsComponent implements OnInit {
   public maskCnpj;
   public maskCpf;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private personService: PersonService
+  ) {
     this.maskCpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/];
     this.maskCnpj = [/\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/];
   }
@@ -48,39 +52,10 @@ export class PersonsComponent implements OnInit {
   }
 
   private initPersons(): void {
-    this.personsFound = [
-      new PhysicalPerson(
-        'Manoel Dijalma',
-        Date.now(),
-        '100.300.054-18',
-        '3763218',
-        '58900-000',
-        'Tenente Aquino',
-        '195',
-        'Casas Populares',
-        'Cajazeiras',
-        'Paraíba',
-        '(83) 99900-5077',
-        'dijalmacz@gmail.com'
-      ),
-      new LegalPerson(
-        '99.999.999/9999-99',
-        'I dont',
-        'I dont',
-        'Ideias',
-        '58900-000',
-        'Tenente Aquino',
-        '195',
-        'Casas Populares',
-        'Cajazeiras',
-        'Paraíba',
-        '(83) 99900-5077',
-        'dijalmacz@gmail.com'
-      )
-    ];
+    this.personService.getPersons().subscribe(persons => this.personsFound = persons);
   }
 
   public edit(id: number): void {
-    this.router.navigate([`/personDetail:${id}`]);
+    this.router.navigate([`/personDetail/${id}`]);
   }
 }

@@ -8,6 +8,7 @@ export class LegalPerson extends Person {
     inscEstadual: string;
 
     constructor (
+      id: number,
       cnpj: string,
       razaoSocial: string,
       nomeFantasia: string,
@@ -21,7 +22,7 @@ export class LegalPerson extends Person {
       telefone: string,
       email: string
     ) {
-      super(cep, logradouro, numero, bairro, cidade, estado, telefone, email);
+      super(id, cep, logradouro, numero, bairro, cidade, estado, telefone, email);
       this.cnpj = cnpj;
       this.razaoSocial = razaoSocial;
       this.nomeFantasia = nomeFantasia;

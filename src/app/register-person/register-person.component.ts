@@ -52,10 +52,10 @@ export class RegisterPersonComponent implements OnInit {
   }
 
   initializaPersons(): void {
-    this.person = new Person('', '', '', '', '', '', '', '');
+    this.person = new Person(null, '', '', '', '', '', '', '', '');
     this.physicalPerson = this.person as PhysicalPerson;
     this.physicalPerson.nome = '';
-    this.physicalPerson.dataDeNascimento = 0;
+    this.physicalPerson.dataDeNascimento = '';
     this.physicalPerson.rg = '';
     this.physicalPerson.cpf = '';
     this.legalPerson = this.person as LegalPerson;

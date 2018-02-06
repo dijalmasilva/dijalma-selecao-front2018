@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { Person } from '../classes/person';
 import { PhysicalPerson } from '../classes/physicalPerson';
 import { LegalPerson } from '../classes/legalPerson';
+import { PersonService } from '../person.service';
 
 @Component({
   selector: 'app-person-detail',
@@ -14,6 +15,8 @@ import { LegalPerson } from '../classes/legalPerson';
 export class PersonDetailComponent implements OnInit {
 
   person: Person;
+  physicalPerson: PhysicalPerson;
+  legalPerson: LegalPerson;
 
   public maskCpf;
   public maskText;
@@ -24,11 +27,9 @@ export class PersonDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private personService: PersonService
   ) {
-    // tslint:disable-next-line:max-line-length
-    this.person = new PhysicalPerson('Manoel Dijalma', Date.now(), '100.300.054-18', '3763218', '58900-000' , 'Tenente', '195', 'Casas Populares', 'Cajazeiras', 'Paraíba', '83 9999', 'dijalmacz@gmail.com');
-
     this.maskCpf = [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/];
     this.maskText = [/^[A-Za-z]+$/];
     this.maskDate = [/[0-3]/, /\d/, '/', /[0-1]/, /\d/, '/', /[1-2]/, /[09]/, /[16789]/, /\d/];
@@ -38,12 +39,24 @@ export class PersonDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getId();
+    this.getPerson();
   }
 
-  getId(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
+  getPerson(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.personService.getPerson(id).subscribe(person => {
+      this.person = person;
+      console.log(this.person);
+      if (person.cpf !== undefined) {
+        console.log('Entry in physical');
+        this.physicalPerson = this.person as PhysicalPerson;
+        console.log(this.physicalPerson);
+      } else {
+        console.log('Entry in legal');
+        this.legalPerson = this.person as LegalPerson;
+        console.log(this.legalPerson);
+      }
+    });
   }
 
   goBack(): void {

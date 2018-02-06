@@ -5,7 +5,7 @@
   <br />
   <form>
     <br />
-    <div *ngIf="person.cpf">
+    <div *ngIf="physicalPerson">
       <div align="center">
         <h4>Pessoa Física</h4>
       </div>
@@ -15,31 +15,31 @@
           <label>Nome</label>
         </div>
         <img src="/assets/icons/name-person.svg" alt="nome">
-        <input type="text" [value]="person.nome">
+        <input type="text" [value]="physicalPerson.nome">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Data de Nascimento</label>
         </div>
         <img src="/assets/icons/birthday-date.svg" alt="data de nascimento">
-        <input type="text" [value]="person.dataDeNascimento" [textMask]="{mask: maskData, guide: false}" placeholder="99/99/9999">
+        <input type="text" [value]="physicalPerson.dataDeNascimento" [textMask]="{mask: maskData, guide: false}" placeholder="99/99/9999">
       </div>
       <div class="input">
         <div class="input-info">
           <label>CPF</label>
         </div>
         <img src="/assets/icons/cpf.svg" alt="cpf">
-        <input type="text" [value]="person.cpf" [textMask]="{mask: maskCpf, guide: false}" placeholder="999.999.999-99">
+        <input type="text" [value]="physicalPerson.cpf" [textMask]="{mask: maskCpf, guide: false}" placeholder="999.999.999-99">
       </div>
       <div class="input">
         <div class="input-info">
           <label>RG</label>
         </div>
         <img src="/assets/icons/rg.svg" alt="rg">
-        <input type="text" [value]="person.rg">
+        <input type="text" [value]="physicalPerson.rg">
       </div>
     </div>
-    <div *ngIf="person.cnpj">
+    <div *ngIf="legalPerson">
       <div align="center">
         <h4>Pessoa Júridica</h4>
       </div>
@@ -49,28 +49,28 @@
           <label>CNPJ</label>
         </div>
         <img src="/assets/icons/cnpj.svg" alt="cnpj">
-        <input type="text" [value]="person.cnpj" [textMask]="{mask: maskCnpj, guide: false}" placeholder="99.999.999/9999-99">
+        <input type="text" [value]="legalPerson.cnpj" [textMask]="{mask: maskCnpj, guide: false}" placeholder="99.999.999/9999-99">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Razão Social</label>
         </div>
         <img src="/assets/icons/social-reason.svg" alt="razão social">
-        <input type="text" [value]="person.razaoSocial">
+        <input type="text" [value]="legalPerson.razaoSocial">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Nome Fantasia</label>
         </div>
         <img src="/assets/icons/fantasy-name.svg" alt="nome fantasia">
-        <input type="text" [value]="person.nomeFantasia">
+        <input type="text" [value]="legalPerson.nomeFantasia">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Inscrição Estadual</label>
         </div>
         <img src="/assets/icons/estadual-inscription.svg" alt="inscrição estadual">
-        <input type="text" [value]="person.inscEstadual">
+        <input type="text" [value]="legalPerson.inscEstadual">
       </div>
     </div>
     <div class="input">

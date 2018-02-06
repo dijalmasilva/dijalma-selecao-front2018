@@ -3,13 +3,14 @@ import { Person } from './person';
 export class PhysicalPerson extends Person {
 
     nome: string;
-    dataDeNascimento: number;
+    dataDeNascimento: string;
     cpf: string;
     rg: string;
 
     constructor (
+      id: number,
       nome: string,
-      dataDeNascimento: number,
+      dataDeNascimento: string,
       cpf: string,
       rg: string,
       cep: string,
@@ -21,7 +22,7 @@ export class PhysicalPerson extends Person {
       telefone: string,
       email: string
     ) {
-      super(cep, logradouro, numero, bairro, cidade, estado, telefone, email);
+      super(id, cep, logradouro, numero, bairro, cidade, estado, telefone, email);
       this.nome = nome;
       this.dataDeNascimento = dataDeNascimento;
       this.cpf = cpf;
