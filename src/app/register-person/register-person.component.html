@@ -17,35 +17,36 @@
         <label for="legalPerson">Júridica</label>
       </div>
     </div>
-    <br/><br/>
+    <br/>
+    <br/>
     <div *ngIf="isPhysicalPerson">
       <div class="input">
         <div class="input-info">
           <label>Nome</label>
         </div>
         <img src="/assets/icons/name-person.svg" alt="nome">
-        <input type="text" ([ngModel])="physicalPerson.nome">
+        <input type="text" [(ngModel)]="nome" name="nome">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Data de Nascimento</label>
         </div>
         <img src="/assets/icons/birthday-date.svg" alt="data de nascimento">
-        <input type="text" [textMask]="{mask: maskDate, guide: false}" placeholder="99/99/9999">
+        <input type="text" [textMask]="{mask: maskDate, guide: false}" placeholder="99/99/9999" [(ngModel)]="dataDeNascimento" name="dataDeNascimento">
       </div>
       <div class="input">
         <div class="input-info">
           <label>CPF</label>
         </div>
         <img src="/assets/icons/cpf.svg" alt="cpf">
-        <input type="text" [textMask]="{mask: maskCpf, guide:false}" placeholder="999.999.999-99">
+        <input type="text" [textMask]="{mask: maskCpf, guide:false}" placeholder="999.999.999-99" [(ngModel)]="cpf" name="cpf">
       </div>
       <div class="input">
         <div class="input-info">
           <label>RG</label>
         </div>
         <img src="/assets/icons/rg.svg" alt="rg">
-        <input type="text">
+        <input type="text" [(ngModel)]="rg" name="rg">
       </div>
     </div>
     <div *ngIf="isLegalPerson">
@@ -54,28 +55,28 @@
           <label>CNPJ</label>
         </div>
         <img src="/assets/icons/cnpj.svg" alt="cnpj">
-        <input type="text" [textMask]="{mask: maskCnpj, guide: false}" placeholder="99.999.999/9999-99">
+        <input type="text" [textMask]="{mask: maskCnpj, guide: false}" placeholder="99.999.999/9999-99" [(ngModel)]="cnpj" name="cnpj">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Razão Social</label>
         </div>
         <img src="/assets/icons/social-reason.svg" alt="razão social">
-        <input type="text">
+        <input type="text" [(ngModel)]="razaoSocial" name="razaoSocial">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Nome Fantasia</label>
         </div>
         <img src="/assets/icons/fantasy-name.svg" alt="nome fantasia">
-        <input type="text">
+        <input type="text" [(ngModel)]="nomeFantasia" name="nomeFantasia">
       </div>
       <div class="input">
         <div class="input-info">
           <label>Inscrição Estadual</label>
         </div>
         <img src="/assets/icons/estadual-inscription.svg" alt="inscrição estadual">
-        <input type="text">
+        <input type="text" [(ngModel)]="inscEstadual" name="inscEstadual">
       </div>
     </div>
     <div class="input">
@@ -83,28 +84,28 @@
         <label>CEP</label>
       </div>
       <img src="/assets/icons/cep.svg" alt="cep">
-      <input type="text" [textMask]="{mask: maskCep, guide: false}" placeholder="99999-999">
+      <input type="text" [textMask]="{mask: maskCep, guide: false}" placeholder="99999-999" [(ngModel)]="cep" name="cep">
     </div>
     <div class="input">
       <div class="input-info">
         <label>Logradouro</label>
       </div>
       <img src="/assets/icons/street.svg" alt="logradouro">
-      <input type="text">
+      <input type="text" [(ngModel)]="logradouro" name="logradouro">
     </div>
     <div class="input">
       <div class="input-info">
         <label>Número</label>
       </div>
       <img src="/assets/icons/number-home.svg" alt="número">
-      <input type="text">
+      <input type="text" [(ngModel)]="numero" name="numero">
     </div>
     <div class="input">
       <div class="input-info">
         <label>Bairro</label>
       </div>
       <img src="/assets/icons/district.svg" alt="bairro">
-      <input type="text">
+      <input type="text" [(ngModel)]="bairro" name="bairro">
     </div>
     <div class="input">
       <div class="input-info">
@@ -120,7 +121,7 @@
         <label>Cidade</label>
       </div>
       <img src="/assets/icons/city.svg" alt="cidade">
-      <select>
+      <select [(ngModel)]="cidade" name="cidade">
         <option *ngFor="let city of cities">{{city}}</option>
       </select>
     </div>
@@ -129,19 +130,19 @@
         <label>Telefone</label>
       </div>
       <img src="/assets/icons/telephone.svg" alt="telefone">
-      <input type="text" [textMask]="{mask: maskFone, guide: false}" placeholder="(99) 99999-9999">
+      <input type="text" [textMask]="{mask: maskFone, guide: false}" placeholder="(99) 99999-9999" [(ngModel)]="telefone" name="telefone">
     </div>
     <div class="input">
       <div class="input-info">
         <label>E-mail</label>
       </div>
       <img src="/assets/icons/email.svg" alt="e-mail">
-      <input type="email">
+      <input type="email" [(ngModel)]="email" name="email">
     </div>
     <br/>
     <div class="bt-function">
-        <button type="button" class="confirm">Salvar</button>
-        <button type="button" class="cancel">Voltar</button>
+      <button type="button" class="confirm" (click)="savePerson()">Salvar</button>
+      <button type="button" class="cancel" (click)="goBack()">Voltar</button>
     </div>
   </form>
 </div>

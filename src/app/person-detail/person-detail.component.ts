@@ -46,17 +46,38 @@ export class PersonDetailComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.personService.getPerson(id).subscribe(person => {
       this.person = person;
-      console.log(this.person);
-      if (person.cpf !== undefined) {
-        console.log('Entry in physical');
-        this.physicalPerson = this.person as PhysicalPerson;
-        console.log(this.physicalPerson);
-      } else {
-        console.log('Entry in legal');
+      const pPerson = this.person as PhysicalPerson;
+      if (pPerson.cpf === undefined) {
         this.legalPerson = this.person as LegalPerson;
-        console.log(this.legalPerson);
+      } else {
+        this.physicalPerson = pPerson;
       }
     });
+  }
+
+  editPerson(): void {
+    if (this.physicalPerson) {
+      this.personService.updatePerson(this.physicalPerson).subscribe(
+        data => {
+          console.log(data);
+          alert('Editado');
+          this.location.back();
+        },
+        error => {
+          console.error(error);
+          alert('error');
+        }
+      );
+    } else {
+      this.personService.updatePerson(this.legalPerson).subscribe(a => {
+        if (a) {
+          alert('editado!');
+          this.location.back();
+        } else {
+          alert('error ao editar');
+        }
+      });
+    }
   }
 
   goBack(): void {

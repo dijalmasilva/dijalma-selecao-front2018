@@ -22,7 +22,7 @@
           <label>Data de Nascimento</label>
         </div>
         <img src="/assets/icons/birthday-date.svg" alt="data de nascimento">
-        <input type="text" [value]="physicalPerson.dataDeNascimento" [textMask]="{mask: maskData, guide: false}" placeholder="99/99/9999">
+        <input type="text" [value]="physicalPerson.dataDeNascimento" placeholder="99/99/9999">
       </div>
       <div class="input">
         <div class="input-info">
@@ -38,6 +38,65 @@
         <img src="/assets/icons/rg.svg" alt="rg">
         <input type="text" [value]="physicalPerson.rg">
       </div>
+      <div class="input">
+        <div class="input-info">
+          <label>CEP</label>
+        </div>
+        <img src="/assets/icons/cep.svg" alt="cep">
+        <input type="text" [value]="physicalPerson.cep" [textMask]="{mask: maskCep, guide: false}" placeholder="99999-999">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Logradouro</label>
+        </div>
+        <img src="/assets/icons/street.svg" alt="logradouro">
+        <input type="text" [value]="physicalPerson.logradouro">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Número</label>
+        </div>
+        <img src="/assets/icons/number-home.svg" alt="número">
+        <input type="text" [value]="physicalPerson.numero">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Bairro</label>
+        </div>
+        <img src="/assets/icons/district.svg" alt="bairro">
+        <input type="text" [value]="physicalPerson.bairro">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Estado</label>
+        </div>
+        <img src="/assets/icons/state.svg" alt="estado">
+        <select>
+          <option>{{physicalPerson.estado}}</option>
+        </select>
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Cidade</label>
+        </div>
+        <img src="/assets/icons/city.svg" alt="cidade">
+        <input type="text" [value]="physicalPerson.cidade">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>Telefone</label>
+        </div>
+        <img src="/assets/icons/telephone.svg" alt="telefone">
+        <input type="text" [value]="physicalPerson.telefone" [textMask]="{mask: maskFone, guide: false}" placeholder="(99) 99999-9999">
+      </div>
+      <div class="input">
+        <div class="input-info">
+          <label>E-mail</label>
+        </div>
+        <img src="/assets/icons/email.svg" alt="e-mail">
+        <input type="email" [value]="physicalPerson.email">
+      </div>
+      <br/>
     </div>
     <div *ngIf="legalPerson">
       <div align="center">
@@ -72,66 +131,66 @@
         <img src="/assets/icons/estadual-inscription.svg" alt="inscrição estadual">
         <input type="text" [value]="legalPerson.inscEstadual">
       </div>
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>CEP</label>
+      <div class="input">
+        <div class="input-info">
+          <label>CEP</label>
+        </div>
+        <img src="/assets/icons/cep.svg" alt="cep">
+        <input type="text" [value]="legalPerson.cep" [textMask]="{mask: maskCep, guide: false}" placeholder="99999-999">
       </div>
-      <img src="/assets/icons/cep.svg" alt="cep">
-      <input type="text" [value]="person.cep" [textMask]="{mask: maskCep, guide: false}" placeholder="99999-999">
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>Logradouro</label>
+      <div class="input">
+        <div class="input-info">
+          <label>Logradouro</label>
+        </div>
+        <img src="/assets/icons/street.svg" alt="logradouro">
+        <input type="text" [value]="legalPerson.logradouro">
       </div>
-      <img src="/assets/icons/street.svg" alt="logradouro">
-      <input type="text" [value]="person.logradouro">
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>Número</label>
+      <div class="input">
+        <div class="input-info">
+          <label>Número</label>
+        </div>
+        <img src="/assets/icons/number-home.svg" alt="número">
+        <input type="text" [value]="legalPerson.numero">
       </div>
-      <img src="/assets/icons/number-home.svg" alt="número">
-      <input type="text" [value]="person.numero">
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>Bairro</label>
+      <div class="input">
+        <div class="input-info">
+          <label>Bairro</label>
+        </div>
+        <img src="/assets/icons/district.svg" alt="bairro">
+        <input type="text" [value]="legalPerson.bairro">
       </div>
-      <img src="/assets/icons/district.svg" alt="bairro">
-      <input type="text" [value]="person.bairro">
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>Estado</label>
+      <div class="input">
+        <div class="input-info">
+          <label>Estado</label>
+        </div>
+        <img src="/assets/icons/state.svg" alt="estado">
+        <select>
+          <option>{{legalPerson.estado}}</option>
+        </select>
       </div>
-      <img src="/assets/icons/state.svg" alt="estado">
-      <select>
-        <option>{{person.estado}}</option>
-      </select>
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>Cidade</label>
+      <div class="input">
+        <div class="input-info">
+          <label>Cidade</label>
+        </div>
+        <img src="/assets/icons/city.svg" alt="cidade">
+        <input type="text" [value]="legalPerson.cidade">
       </div>
-      <img src="/assets/icons/city.svg" alt="cidade">
-      <input type="text" [value]="person.cidade">
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>Telefone</label>
+      <div class="input">
+        <div class="input-info">
+          <label>Telefone</label>
+        </div>
+        <img src="/assets/icons/telephone.svg" alt="telefone">
+        <input type="text" [value]="legalPerson.telefone" [textMask]="{mask: maskFone, guide: false}" placeholder="(99) 99999-9999">
       </div>
-      <img src="/assets/icons/telephone.svg" alt="telefone">
-      <input type="text" [value]="person.telefone" [textMask]="{mask: maskFone, guide: false}" placeholder="(99) 99999-9999">
-    </div>
-    <div class="input">
-      <div class="input-info">
-        <label>E-mail</label>
+      <div class="input">
+        <div class="input-info">
+          <label>E-mail</label>
+        </div>
+        <img src="/assets/icons/email.svg" alt="e-mail">
+        <input type="email" [value]="legalPerson.email">
       </div>
-      <img src="/assets/icons/email.svg" alt="e-mail">
-      <input type="email" [value]="person.email">
+      <br/>
     </div>
-    <br/>
     <div class="bt-function">
       <button type="button" class="confirm">Editar</button>
       <button type="button" class="cancel" (click)="goBack()">Voltar</button>

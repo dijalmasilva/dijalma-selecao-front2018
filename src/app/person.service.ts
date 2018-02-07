@@ -60,6 +60,9 @@ export class PersonService {
   }
 
   addPerson(person: Person): Observable<Person> {
+    this.generateId(function (id) {
+      person.id = id;
+    });
     return this.http.post<Person>(this.personsUrl, person, httpOptions).pipe(
       catchError(this.handleError<Person>('addperson'))
     );
@@ -75,12 +78,20 @@ export class PersonService {
   }
 
   updatePerson(person: Person): Observable<any> {
+    const url = `${this.personsUrl}/${person.id}`;
     return this.http.put(this.personsUrl, person, httpOptions).pipe(
       tap(_ => console.log(`updated person id=${person.id}`)),
       catchError(this.handleError<any>('updateperson'))
     );
   }
 
+  private generateId(callback) {
+    this.getPersons().subscribe(persons => {
+      this.persons = persons;
+      const id = Math.max.apply(Math, persons.map(function (o) { return o.id; }));
+      callback(id + 1);
+    });
+  }
 
 
   /**

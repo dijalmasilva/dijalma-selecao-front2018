@@ -9,11 +9,11 @@
       <nav class="menu">
         <a class="item-menu" routerLink="/dashboard">Dashboard</a>
         <a class="item-menu" (click)="interationMenu('register')">Cadastrar</a>
-        <nav class="sub-menu animated" [class.slideInLeft]="isRegisterMenu" [class.disable]="!isRegisterMenu">
+        <nav class="sub-menu animated" [class.bounceInLeft]="isRegisterMenu" [class.disable]="!isRegisterMenu">
             <a class="sub-item" routerLink="/new/person">Pessoa</a>
         </nav>
         <a class="item-menu" (click)="interationMenu('list')">Listar</a>
-        <nav class="sub-menu animated" [class.slideInLeft]="isListMenu" [class.disable]="!isListMenu">
+        <nav class="sub-menu animated" [class.bounceInLeft]="isListMenu" [class.disable]="!isListMenu">
             <a class="sub-item" routerLink="/persons">Pessoa</a>
         </nav>
       </nav>

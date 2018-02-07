@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MenuService } from '../menu.service';
@@ -9,6 +9,8 @@ import { MenuService } from '../menu.service';
   styleUrls: ['./header-fixed.component.css']
 })
 export class HeaderFixedComponent implements OnInit {
+
+  nameProject: String = 'Seleção Front-End';
 
   constructor(
     private menuService: MenuService,
